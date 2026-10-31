@@ -43,6 +43,62 @@ if (avatar && avatarFallback) {
   }
 }
 
+const mobileTapViewport = window.matchMedia("(max-width: 768px)");
+let activeMobileTapTarget = null;
+let activeMobileTapClass = "";
+let activeMobileTapCleanup = () => {};
+
+const clearMobileTapTarget = () => {
+  if (!activeMobileTapTarget) {
+    return;
+  }
+
+  const previousTarget = activeMobileTapTarget;
+  previousTarget.classList.remove(activeMobileTapClass);
+  activeMobileTapTarget = null;
+  activeMobileTapClass = "";
+  const cleanup = activeMobileTapCleanup;
+  activeMobileTapCleanup = () => {};
+  cleanup();
+};
+
+const toggleMobileTapTarget = (target, className, onActivate, onDeactivate = () => {}) => {
+  if (activeMobileTapTarget === target) {
+    clearMobileTapTarget();
+    return;
+  }
+
+  clearMobileTapTarget();
+  activeMobileTapTarget = target;
+  activeMobileTapClass = className;
+  activeMobileTapCleanup = onDeactivate;
+  target.classList.add(className);
+  onActivate();
+};
+
+document.addEventListener("click", (event) => {
+  if (!mobileTapViewport.matches) {
+    return;
+  }
+
+  const target = event.target instanceof Element
+    ? event.target.closest(".avatar-frame, .skill-card[data-skill-level], .interest-card[data-preview-src]")
+    : null;
+
+  if (!target || (target !== activeMobileTapTarget && !event.target.closest("a"))) {
+    clearMobileTapTarget();
+  }
+});
+
+const avatarFrame = document.querySelector(".avatar-frame");
+if (avatarFrame instanceof HTMLElement) {
+  avatarFrame.addEventListener("click", () => {
+    if (mobileTapViewport.matches) {
+      toggleMobileTapTarget(avatarFrame, "is-tap-active", () => {});
+    }
+  });
+}
+
 const backToTopCat = document.querySelector("#back-to-top-cat");
 
 if (backToTopCat instanceof HTMLButtonElement) {
@@ -81,6 +137,14 @@ if (portfolioFilters.length > 0 && portfolioCards.length > 0) {
 const skillsSection = document.querySelector(".skills-section");
 if (skillsSection instanceof HTMLElement) {
   const skillCards = skillsSection.querySelectorAll(".skill-card[data-skill-level]");
+  skillCards.forEach((card) => {
+    card.addEventListener("click", () => {
+      if (mobileTapViewport.matches) {
+        toggleMobileTapTarget(card, "is-tap-active", () => {});
+      }
+    });
+  });
+
   const animateSkillLevels = () => {
     skillCards.forEach((card) => {
       const targetLevel = Number(card.dataset.skillLevel);
@@ -174,7 +238,6 @@ if (interestPreview instanceof HTMLElement
   document.body.append(interestPreview);
   interestPreviewVideo.pause();
   let activeInterestCard = null;
-  let pinnedInterestCard = null;
 
   const positionInterestPreview = (card) => {
     const cardBounds = card.getBoundingClientRect();
@@ -238,7 +301,7 @@ if (interestPreview instanceof HTMLElement
 
   const hideInterestPreview = (card, force = false) => {
     if (activeInterestCard !== card
-      || (!force && (pinnedInterestCard === card
+      || (!force && (activeMobileTapTarget === card
         || card.matches(":hover")
         || card.contains(document.activeElement)))) {
       return;
@@ -254,11 +317,15 @@ if (interestPreview instanceof HTMLElement
 
   interestCards.forEach((card) => {
     card.addEventListener("pointerenter", () => {
-      showInterestPreview(card);
+      if (!mobileTapViewport.matches) {
+        showInterestPreview(card);
+      }
     });
 
     card.addEventListener("pointerleave", () => {
-      hideInterestPreview(card);
+      if (!mobileTapViewport.matches) {
+        hideInterestPreview(card);
+      }
     });
 
     card.addEventListener("focusin", () => {
@@ -270,34 +337,19 @@ if (interestPreview instanceof HTMLElement
     });
 
     card.addEventListener("click", (event) => {
-      if (!window.matchMedia("(hover: none)").matches
+      if (!mobileTapViewport.matches
         || !(event.target instanceof Element)
         || event.target.closest("a")) {
         return;
       }
 
-      if (pinnedInterestCard === card) {
-        pinnedInterestCard = null;
-        hideInterestPreview(card, true);
-        return;
-      }
-
-      pinnedInterestCard = card;
-      showInterestPreview(card);
+      toggleMobileTapTarget(
+        card,
+        "is-tap-active",
+        () => showInterestPreview(card),
+        () => hideInterestPreview(card, true)
+      );
     });
-  });
-
-  document.addEventListener("click", (event) => {
-    if (!(event.target instanceof Element)
-      || event.target.closest(".interest-card[data-preview-src]")) {
-      return;
-    }
-
-    if (pinnedInterestCard) {
-      const card = pinnedInterestCard;
-      pinnedInterestCard = null;
-      hideInterestPreview(card, true);
-    }
   });
 
   window.addEventListener("scroll", () => {
@@ -475,8 +527,6 @@ if (customCursor instanceof HTMLElement
 }
 
 if (finePointer.matches && cursorMotionAllowed) {
-  const avatarFrame = document.querySelector(".avatar-frame");
-
   if (avatarFrame instanceof HTMLElement) {
     avatarFrame.addEventListener("pointermove", (event) => {
       const bounds = avatarFrame.getBoundingClientRect();

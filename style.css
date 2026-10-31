@@ -5041,6 +5041,79 @@ body.is-lightbox-open {
     padding: 20px;
   }
 
+  .avatar-frame:hover {
+    box-shadow: 0 22px 50px rgba(18, 18, 18, 0.09);
+  }
+
+  .avatar-frame.is-tap-active {
+    box-shadow: 0 14px 32px rgba(0, 184, 212, 0.2);
+  }
+
+  .skill-card[data-skill-level]:hover:not(.is-tap-active) {
+    transform: none;
+    border-color: rgba(218, 223, 228, 0.9);
+    background: rgba(248, 249, 250, 0.8);
+    box-shadow: none;
+  }
+
+  .skill-card[data-skill-level]:hover:not(.is-tap-active) .skill-icon {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .skill-card[data-skill-level].is-tap-active {
+    border-color: var(--accent);
+    background: #fff;
+    box-shadow: 0 14px 32px rgba(0, 184, 212, 0.16);
+  }
+
+  .skill-card.is-tap-active .skill-card-level-value {
+    transform: scale(1.12);
+    color: var(--accent);
+  }
+
+  .skill-card-level {
+    max-height: 0;
+    margin-top: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      max-height 220ms ease,
+      margin-top 220ms ease,
+      opacity 180ms ease,
+      visibility 180ms ease;
+  }
+
+  .skill-card.is-tap-active .skill-card-level {
+    max-height: 52px;
+    margin-top: 18px;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .interest-card:hover:not(.is-tap-active) {
+    transform: none;
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 16px 38px rgba(0, 0, 0, 0.2);
+  }
+
+  .interest-card:hover:not(.is-tap-active):not(.is-flipped) .interest-card-inner {
+    transform: none;
+  }
+
+  .interest-card.is-tap-active {
+    border-color: var(--interest-accent);
+    box-shadow: 0 16px 38px rgba(0, 0, 0, 0.24);
+  }
+
+  .avatar-frame:active,
+  .skill-card[data-skill-level]:active,
+  .interest-card:active {
+    transform: scale(0.97);
+    transition-duration: 100ms;
+  }
+
   .portfolio-heading,
   .interests-heading {
     margin-bottom: 26px;
