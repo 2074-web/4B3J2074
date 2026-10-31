@@ -174,6 +174,7 @@ if (interestPreview instanceof HTMLElement
   document.body.append(interestPreview);
   interestPreviewVideo.pause();
   let activeInterestCard = null;
+  let pinnedInterestCard = null;
 
   const positionInterestPreview = (card) => {
     const cardBounds = card.getBoundingClientRect();
@@ -235,10 +236,11 @@ if (interestPreview instanceof HTMLElement
     interestPreview.classList.add("is-visible");
   };
 
-  const hideInterestPreview = (card) => {
+  const hideInterestPreview = (card, force = false) => {
     if (activeInterestCard !== card
-      || card.matches(":hover")
-      || card.contains(document.activeElement)) {
+      || (!force && (pinnedInterestCard === card
+        || card.matches(":hover")
+        || card.contains(document.activeElement)))) {
       return;
     }
 
@@ -266,6 +268,36 @@ if (interestPreview instanceof HTMLElement
     card.addEventListener("focusout", () => {
       window.requestAnimationFrame(() => hideInterestPreview(card));
     });
+
+    card.addEventListener("click", (event) => {
+      if (!window.matchMedia("(hover: none)").matches
+        || !(event.target instanceof Element)
+        || event.target.closest("a")) {
+        return;
+      }
+
+      if (pinnedInterestCard === card) {
+        pinnedInterestCard = null;
+        hideInterestPreview(card, true);
+        return;
+      }
+
+      pinnedInterestCard = card;
+      showInterestPreview(card);
+    });
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!(event.target instanceof Element)
+      || event.target.closest(".interest-card[data-preview-src]")) {
+      return;
+    }
+
+    if (pinnedInterestCard) {
+      const card = pinnedInterestCard;
+      pinnedInterestCard = null;
+      hideInterestPreview(card, true);
+    }
   });
 
   window.addEventListener("scroll", () => {
