@@ -43,36 +43,41 @@
 
     <main>
       <section class="hero section-shell" id="home" aria-labelledby="hero-title">
-        <div class="hero-copy">
-          <p class="eyebrow"><span class="status-dot"></span> AVAILABLE FOR NEW IDEAS</p>
-          <h1 id="hero-title">LI, SI-XUAN</h1>
-          <p class="hero-role">VISUAL ARTIST <span aria-hidden="true">//</span> <span class="hero-japanese">視覚伝達設計</span></p>
-          <p class="hero-intro">
-            Turning curious ideas into bold, thoughtful digital experiences.
-          </p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#portfolio">
-              VIEW WORK <span class="button-arrow" aria-hidden="true">↗</span>
-            </a>
-            <a class="button button-secondary" href="#contact">
-              GET IN TOUCH <span class="button-arrow" aria-hidden="true">↗</span>
+        <div class="hero-container">
+          <div class="hero-copy">
+            <p class="eyebrow"><span class="status-dot"></span> AVAILABLE FOR NEW IDEAS</p>
+            <h1 class="hero-name" id="hero-title">
+              <span class="hero-name-primary">李思璇</span>
+              <span class="hero-name-en">LI, SI-XUAN</span>
+            </h1>
+            <p class="hero-role">VISUAL ARTIST <span aria-hidden="true">//</span> <span class="hero-japanese">視覚伝達設計</span></p>
+            <p class="hero-intro">
+              Turning curious ideas into bold, thoughtful digital experiences.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#portfolio">
+                VIEW WORK <span class="button-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="button button-secondary" href="#contact">
+                GET IN TOUCH <span class="button-arrow" aria-hidden="true">↗</span>
+              </a>
+            </div>
+            <a class="scroll-hint" href="#about">
+              <span class="scroll-line" aria-hidden="true"></span>
+              SCROLL TO EXPLORE
             </a>
           </div>
-          <a class="scroll-hint" href="#about">
-            <span class="scroll-line" aria-hidden="true"></span>
-            SCROLL TO EXPLORE
-          </a>
-        </div>
 
-        <div class="hero-visual">
-          <div class="avatar-glow" aria-hidden="true"></div>
-          <div class="avatar-frame">
-            <span class="avatar-fallback" aria-hidden="true">SX</span>
-            <img src="我2.jpg" alt="李思璇個人照" class="hero-avatar">
+          <div class="hero-visual">
+            <div class="avatar-glow" aria-hidden="true"></div>
+            <div class="avatar-frame">
+              <span class="avatar-fallback" aria-hidden="true">SX</span>
+              <img src="我2.jpg" alt="李思璇個人照" class="hero-avatar">
+            </div>
+            <span class="visual-caption">DESIGNING WITH CURIOSITY</span>
+            <span class="visual-orbit orbit-one" aria-hidden="true"></span>
+            <span class="visual-orbit orbit-two" aria-hidden="true"></span>
           </div>
-          <span class="visual-caption">DESIGNING WITH CURIOSITY</span>
-          <span class="visual-orbit orbit-one" aria-hidden="true"></span>
-          <span class="visual-orbit orbit-two" aria-hidden="true"></span>
         </div>
 
         <span class="hero-index" aria-hidden="true">01 / 04</span>
@@ -133,7 +138,7 @@
           <h2 id="skills-title">創意與技術，<span>一起到位。</span></h2>
           <p class="skills-intro">從數位創作到手作媒材，持續練習、探索並累積作品。</p>
           <div class="skill-list" aria-label="專業技能">
-            <article class="skill-card skill-card-marker">
+            <article class="skill-card skill-card-marker" data-skill-level="85">
               <span class="skill-card-number">01 / DRAW</span>
               <span class="skill-icon" aria-hidden="true">
                 <svg viewBox="0 0 48 48">
@@ -144,9 +149,13 @@
               <h3>麥克筆繪製</h3>
               <p>以鮮明色彩和俐落筆觸，為靈感注入個性。</p>
               <span class="skill-card-tag">MARKER ART</span>
+              <div class="skill-card-level">
+                <div class="skill-card-level-label"><span>能力值</span><span class="skill-card-level-value">0%</span></div>
+                <div class="skill-card-level-track" role="progressbar" aria-label="麥克筆繪製能力值" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span class="skill-card-level-fill"></span></div>
+              </div>
             </article>
 
-            <article class="skill-card skill-card-dot">
+            <article class="skill-card skill-card-dot" data-skill-level="80">
               <span class="skill-card-number">02 / DETAIL</span>
               <span class="skill-icon" aria-hidden="true">
                 <svg viewBox="0 0 48 48">
@@ -164,9 +173,13 @@
               <h3>細針點繪</h3>
               <p>用細膩的點與層次，慢慢堆疊畫面質感。</p>
               <span class="skill-card-tag">DOT DRAWING</span>
+              <div class="skill-card-level">
+                <div class="skill-card-level-label"><span>能力值</span><span class="skill-card-level-value">0%</span></div>
+                <div class="skill-card-level-track" role="progressbar" aria-label="細針點繪能力值" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span class="skill-card-level-fill"></span></div>
+              </div>
             </article>
 
-            <article class="skill-card skill-card-3d">
+            <article class="skill-card skill-card-3d" data-skill-level="85">
               <span class="skill-card-number">03 / 3D SPACE</span>
               <span class="skill-icon" aria-hidden="true">
                 <svg viewBox="0 0 48 48">
@@ -177,9 +190,13 @@
               <h3>3D 建模渲染</h3>
               <p>建構空間、材質與燈光，呈現立體視覺想像。</p>
               <span class="skill-card-tag">BLENDER <i>/</i> 3DS MAX</span>
+              <div class="skill-card-level">
+                <div class="skill-card-level-label"><span>能力值</span><span class="skill-card-level-value">0%</span></div>
+                <div class="skill-card-level-track" role="progressbar" aria-label="3D 建模渲染能力值" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span class="skill-card-level-fill"></span></div>
+              </div>
             </article>
 
-            <article class="skill-card skill-card-video">
+            <article class="skill-card skill-card-video" data-skill-level="72">
               <span class="skill-card-number">04 / MOTION</span>
               <span class="skill-icon" aria-hidden="true">
                 <svg viewBox="0 0 48 48">
@@ -191,6 +208,10 @@
               <h3>影片剪輯</h3>
               <p>剪接畫面與節奏，將片段編織成完整故事。</p>
               <span class="skill-card-tag">PREMIERE <i>/</i> CAPCUT</span>
+              <div class="skill-card-level">
+                <div class="skill-card-level-label"><span>能力值</span><span class="skill-card-level-value">0%</span></div>
+                <div class="skill-card-level-track" role="progressbar" aria-label="影片剪輯能力值" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span class="skill-card-level-fill"></span></div>
+              </div>
             </article>
           </div>
         </div>
@@ -225,7 +246,7 @@
             <article class="gallery-card gallery-card-featured" data-category="web3d">
               <a
                 class="gallery-image-link"
-                href="https://2074-web.github.io/4B3J2074/"
+                href="https://2074-web.github.io/tour-site/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="在新分頁開啟 ONE OK ROCK 巡演網站"
@@ -241,41 +262,36 @@
               </a>
               <div class="gallery-card-info">
                 <div>
-                  <span class="gallery-category">WEB DEVELOPMENT · HTML / CSS / JS</span>
+                  <span class="gallery-category">01 / WEB DEVELOPMENT</span>
                   <h3>ONE OK ROCK 巡演網站</h3>
                   <p>Apple 簡約暗黑風樂團專屬網站，包含樂團故事、團員卡片、巡演場次與新曲試聽。</p>
                 </div>
                 <div class="gallery-actions">
-                  <a class="gallery-demo" href="https://2074-web.github.io/4B3J2074/" target="_blank" rel="noopener noreferrer">
-                    VIEW DEMO <span aria-hidden="true">↗</span>
+                  <a class="project-link-btn" href="https://2074-web.github.io/tour-site/" target="_blank" rel="noopener noreferrer">
+                    觀看巡演網站 ↗
                   </a>
                 </div>
               </div>
             </article>
 
-            <article class="gallery-card" data-category="web3d">
-              <a
-                class="gallery-image-link"
-                href="4B3J2074_李思璇02.jpg"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="查看 3D 書桌空間渲染作品大圖"
-              >
-                <img src="4B3J2074_李思璇02.jpg" alt="3D 書桌空間渲染作品" class="gallery-image">
-                <span class="gallery-overlay">
-                  <span>
-                    <span class="gallery-overlay-title">靜謐工作角落</span>
-                    <span class="gallery-overlay-meta">3D MODELING &amp; RENDERING</span>
-                  </span>
-                  <span class="gallery-view">查看大圖 <span aria-hidden="true">↗</span></span>
-                </span>
-              </a>
+            <article class="gallery-card gallery-card-desk" data-category="web3d">
               <div class="gallery-card-info">
                 <div>
-                  <span class="gallery-category">3D MODELING &amp; RENDERING</span>
+                  <span class="gallery-category">02 / 3D SPATIAL DESIGN</span>
                   <h3>3D 書桌空間</h3>
                   <p>以光線、材質與生活物件構成的桌面場景渲染。</p>
                 </div>
+              </div>
+              <div class="desk-gallery">
+                <button class="desk-gallery-trigger" type="button" aria-label="放大檢視 3D 書桌空間 01">
+                  <img src="4B3J2074_李思璇01.jpg" alt="3D 書桌空間 01">
+                </button>
+                <button class="desk-gallery-trigger" type="button" aria-label="放大檢視 3D 書桌空間 02">
+                  <img src="4B3J2074_李思璇02.jpg" alt="3D 書桌空間 02">
+                </button>
+                <button class="desk-gallery-trigger" type="button" aria-label="放大檢視 3D 書桌空間 03">
+                  <img src="4B3J2074_李思璇03.jpg" alt="3D 書桌空間 03">
+                </button>
               </div>
             </article>
 
@@ -298,7 +314,7 @@
               </a>
               <div class="gallery-card-info">
                 <div>
-                  <span class="gallery-category">MARKER DESIGN · POSTER</span>
+                  <span class="gallery-category">03 / MARKER POSTER DESIGN</span>
                   <h3>廟會慶典海報</h3>
                   <p>以麥克筆鮮明色彩描繪熱鬧節慶與傳統意象。</p>
                 </div>
@@ -324,7 +340,7 @@
               </a>
               <div class="gallery-card-info">
                 <div>
-                  <span class="gallery-category">DOT DRAWING · FINE ART</span>
+                  <span class="gallery-category">04 / DOTWORK ILLUSTRATION</span>
                   <h3>點繪梅花鹿</h3>
                   <p>以細緻點描堆疊鹿身紋理與林間靜謐氛圍。</p>
                 </div>
@@ -350,7 +366,7 @@
               </a>
               <div class="gallery-card-info">
                 <div>
-                  <span class="gallery-category">CHARACTER ILLUSTRATION</span>
+                  <span class="gallery-category">05 / CHARACTER ILLUSTRATION</span>
                   <h3>JOJO 喬魯諾</h3>
                   <p>動漫角色手繪練習，著重神情、線條與個性刻畫。</p>
                 </div>
@@ -372,7 +388,7 @@
               </div>
               <div class="gallery-card-info">
                 <div>
-                  <span class="gallery-category">VIDEO EDITING · TRAVEL FILM</span>
+                  <span class="gallery-category">06 / TRAVEL FILM</span>
                   <h3>濟州島旅遊 VLOG</h3>
                   <p>剪輯濟州島旅途片段，記錄風景與旅行日常。</p>
                 </div>
@@ -381,6 +397,14 @@
           </div>
         </div>
       </section>
+
+      <div class="desk-lightbox" id="desk-lightbox" role="dialog" aria-modal="true" aria-label="3D 書桌空間圖片放大檢視" hidden>
+        <button class="desk-lightbox-close" type="button" aria-label="關閉圖片檢視">×</button>
+        <figure class="desk-lightbox-figure">
+          <img class="desk-lightbox-image" src="" alt="">
+          <figcaption class="desk-lightbox-caption"></figcaption>
+        </figure>
+      </div>
 
       <section class="interests-section" id="interests" aria-labelledby="interests-title">
         <div class="interests-shell">
@@ -393,86 +417,119 @@
           </div>
 
           <div class="interests-grid">
-            <article class="interest-card interest-music">
-              <div class="interest-card-top">
-                <span class="interest-index">01 / SOUND</span>
-                <span class="interest-icon" aria-hidden="true">
-                  <svg viewBox="0 0 48 48">
-                    <path d="M8 27v-3a16 16 0 0 1 32 0v3"/>
-                    <rect x="7" y="25" width="8" height="13" rx="4"/>
-                    <rect x="33" y="25" width="8" height="13" rx="4"/>
-                    <path d="M18 31v-7l12-3v10"/>
-                    <circle cx="16" cy="33" r="3"/>
-                    <circle cx="27" cy="32" r="3"/>
-                  </svg>
-                </span>
+            <article class="interest-card interest-music" tabindex="0" data-preview-src="音樂封面.jpg" data-preview-alt="ONE OK ROCK 音樂封面" data-preview-caption="ONE OK ROCK / MUSIC">
+              <div class="interest-card-inner">
+                <div class="interest-card-face interest-card-front">
+                  <div class="interest-card-top">
+                    <span class="interest-index">01 / SOUND</span>
+                    <span class="interest-icon" aria-hidden="true">
+                      <svg viewBox="0 0 48 48">
+                        <path d="M8 27v-3a16 16 0 0 1 32 0v3"/>
+                        <rect x="7" y="25" width="8" height="13" rx="4"/>
+                        <rect x="33" y="25" width="8" height="13" rx="4"/>
+                        <path d="M18 31v-7l12-3v10"/>
+                        <circle cx="16" cy="33" r="3"/>
+                        <circle cx="27" cy="32" r="3"/>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="interest-card-copy">
+                    <p class="interest-card-label">LOUD HEART, LIVE LOUDER</p>
+                    <h3>音樂 <span>ONE OK ROCK</span></h3>
+                    <p>
+                      熱愛 Alternative Rock 另類搖滾，是 ONE OK ROCK 的忠實樂迷。
+                      享受現場演唱會的震撼，也從音樂中汲取創作靈感；J-POP 與 K-POP 也在我的播放清單裡。
+                    </p>
+                  </div>
+                  <div class="interest-tags" aria-label="喜愛音樂">
+                    <span>ALT ROCK</span><span>ONE OK ROCK</span><span>J-POP · K-POP</span>
+                  </div>
+                  <span class="interest-card-orbit" aria-hidden="true"></span>
+                </div>
+                <div class="interest-card-face interest-card-back" aria-hidden="true">
+                  <span class="interest-index">A LITTLE NOTE / 01</span>
+                  <p>把音量調大一點，靈感就跟著鼓點進場。</p>
+                  <a class="interest-card-link" href="https://music.youtube.com/channel/UCYXU4IweiEiwKHzTcaKRAzw" target="_blank" rel="noopener noreferrer">聆聽 ONE OK ROCK <span aria-hidden="true">↗</span></a>
+                  <span class="interest-card-back-mark" aria-hidden="true">♪</span>
+                </div>
               </div>
-              <div class="interest-card-copy">
-                <p class="interest-card-label">LOUD HEART, LIVE LOUDER</p>
-                <h3>音樂信仰 <span>Music</span></h3>
-                <p>
-                  熱愛 Alternative Rock 另類搖滾，是 ONE OK ROCK 的忠實樂迷。
-                  享受現場演唱會的震撼，也從音樂中汲取創作靈感；J-POP 與 K-POP 也在我的播放清單裡。
-                </p>
-              </div>
-              <div class="interest-tags" aria-label="喜愛音樂">
-                <span>ALT ROCK</span><span>ONE OK ROCK</span><span>J-POP · K-POP</span>
-              </div>
-              <span class="interest-card-orbit" aria-hidden="true"></span>
             </article>
 
-            <article class="interest-card interest-anime">
-              <div class="interest-card-top">
-                <span class="interest-index">02 / FRAME</span>
-                <span class="interest-icon" aria-hidden="true">
-                  <svg viewBox="0 0 48 48">
-                    <path d="M9 8h30v32H9z"/>
-                    <path d="M9 15h30M16 8v7M32 8v7"/>
-                    <path d="m18 27 5-6 4 5 3-3 5 7H13l5-3Z"/>
-                    <circle cx="19" cy="19" r="1.5"/>
-                  </svg>
-                </span>
+            <article class="interest-card interest-anime" tabindex="0" data-preview-src="jojo封面.jpg" data-preview-alt="JOJO 冒險野郎封面" data-preview-caption="JOJO / ADVENTURE">
+              <div class="interest-card-inner">
+                <div class="interest-card-face interest-card-front">
+                  <div class="interest-card-top">
+                    <span class="interest-index">02 / FRAME</span>
+                    <span class="interest-icon" aria-hidden="true">
+                      <svg viewBox="0 0 48 48">
+                        <path d="M9 8h30v32H9z"/>
+                        <path d="M9 15h30M16 8v7M32 8v7"/>
+                        <path d="m18 27 5-6 4 5 3-3 5 7H13l5-3Z"/>
+                        <circle cx="19" cy="19" r="1.5"/>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="interest-card-copy">
+                    <p class="interest-card-label">BOLD LINES, BIG WORLDS</p>
+                    <h3>動漫 <span>JOJO 冒險野郎</span></h3>
+                    <p>
+                      熱衷追蹤各類精緻的 serialized 漫畫，從人氣韓漫《JINX 魔咒》，
+                      到《JOJO 的奇妙冒險》、《航海王》與《咒術迴戰》，享受每個風格鮮明的世界。
+                    </p>
+                  </div>
+                  <div class="interest-tags" aria-label="喜愛作品">
+                    <span>MANHWA</span><span>MANGA</span><span>VISUAL WORLDS</span>
+                  </div>
+                  <span class="interest-card-orbit" aria-hidden="true"></span>
+                </div>
+                <div class="interest-card-face interest-card-back" aria-hidden="true">
+                  <span class="interest-index">A LITTLE NOTE / 02</span>
+                  <p>每一格分鏡，都是通往新世界的入口。</p>
+                  <a class="interest-card-link" href="https://www.youtube.com/watch?v=kEq0sKAVsfE" target="_blank" rel="noopener noreferrer">觀看 JOJO 影片 <span aria-hidden="true">↗</span></a>
+                  <span class="interest-card-back-mark" aria-hidden="true">✦</span>
+                </div>
               </div>
-              <div class="interest-card-copy">
-                <p class="interest-card-label">BOLD LINES, BIG WORLDS</p>
-                <h3>動漫與視覺 <span>Anime &amp; Art</span></h3>
-                <p>
-                  熱衷追蹤各類精緻的 serialized 漫畫，從人氣韓漫《JINX 魔咒》，
-                  到《JOJO 的奇妙冒險》、《航海王》與《咒術迴戰》，享受每個風格鮮明的世界。
-                </p>
-              </div>
-              <div class="interest-tags" aria-label="喜愛作品">
-                <span>MANHWA</span><span>MANGA</span><span>VISUAL WORLDS</span>
-              </div>
-              <span class="interest-card-orbit" aria-hidden="true"></span>
             </article>
 
-            <article class="interest-card interest-lifestyle">
-              <div class="interest-card-top">
-                <span class="interest-index">03 / EXPLORE</span>
-                <span class="interest-icon" aria-hidden="true">
-                  <svg viewBox="0 0 48 48">
-                    <path d="M7 16h8l3-4h12l3 4h8a3 3 0 0 1 3 3v18a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V19a3 3 0 0 1 3-3Z"/>
-                    <circle cx="24" cy="27" r="8"/>
-                    <circle cx="24" cy="27" r="3"/>
-                    <path d="m33 7 2 3 3 1-3 2-1 3-2-3-3-1 3-2 1-3Z"/>
-                  </svg>
-                </span>
+            <article class="interest-card interest-lifestyle" tabindex="0" data-preview-src="咪.MOV" data-preview-type="video" data-preview-alt="拍攝片段預覽" data-preview-caption="FILM / CAPTURE THE MOMENT">
+              <div class="interest-card-inner">
+                <div class="interest-card-face interest-card-front">
+                  <div class="interest-card-top">
+                    <span class="interest-index">03 / FILM</span>
+                    <span class="interest-icon" aria-hidden="true">
+                      <svg viewBox="0 0 48 48">
+                        <path d="M7 16h8l3-4h12l3 4h8a3 3 0 0 1 3 3v18a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V19a3 3 0 0 1 3-3Z"/>
+                        <circle cx="24" cy="27" r="8"/>
+                        <circle cx="24" cy="27" r="3"/>
+                        <path d="m33 7 2 3 3 1-3 2-1 3-2-3-3-1 3-2 1-3Z"/>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="interest-card-copy">
+                    <p class="interest-card-label">COLLECT MOMENTS, MAKE STORIES</p>
+                    <h3>拍攝 <span>Film &amp; Capture</span></h3>
+                    <p>
+                      喜歡用鏡頭捕捉日常片刻，透過影像記錄觀察到的風景與故事。
+                    </p>
+                  </div>
+                  <div class="interest-tags" aria-label="拍攝興趣">
+                    <span>FILM</span><span>CAPTURE</span><span>DAILY MOMENTS</span>
+                  </div>
+                  <span class="interest-card-orbit" aria-hidden="true"></span>
+                </div>
+                <div class="interest-card-face interest-card-back" aria-hidden="true">
+                  <span class="interest-index">A LITTLE NOTE / 03</span>
+                  <p>按下快門，把轉瞬即逝的片刻留在畫面裡。</p>
+                  <span class="interest-card-back-mark" aria-hidden="true">⌁</span>
+                </div>
               </div>
-              <div class="interest-card-copy">
-                <p class="interest-card-label">COLLECT MOMENTS, MAKE STORIES</p>
-                <h3>靈感日常 <span>Lifestyle &amp; Travel</span></h3>
-                <p>
-                  用鏡頭記錄世界，曾前往濟州島等地拍攝與剪輯旅遊 VLOG。
-                  熱愛在旅途中探索，也從手繪與日常觀察中收集設計靈感。
-                </p>
-              </div>
-              <div class="interest-tags" aria-label="生活靈感">
-                <span>TRAVEL VLOG</span><span>JEJU ISLAND</span><span>SKETCH &amp; DISCOVER</span>
-              </div>
-              <span class="interest-card-orbit" aria-hidden="true"></span>
             </article>
           </div>
+          <figure class="interest-preview" aria-hidden="true">
+            <img class="interest-preview-image" src="" alt="">
+            <video class="interest-preview-video" autoplay muted loop playsinline preload="metadata" hidden></video>
+            <figcaption class="interest-preview-caption"></figcaption>
+          </figure>
         </div>
       </section>
 
@@ -559,10 +616,37 @@
       <div class="footer-inner">
         <a class="footer-brand" href="#home" aria-label="回到首頁">SIXUAN<span>.</span></a>
         <p>© 2026 李思璇. All rights reserved.</p>
-        <a class="back-to-top" href="#home">
-          BACK TO TOP <span aria-hidden="true">↑</span>
-        </a>
       </div>
     </footer>
+
+    <button id="back-to-top-cat" class="cat-fixed" type="button" aria-label="回到頁面頂部">
+      <svg class="cat-art" viewBox="0 0 100 100" aria-hidden="true">
+        <ellipse cx="52" cy="80" rx="27" ry="5" fill="rgba(24, 26, 30, 0.14)"/>
+        <g class="cat-tail">
+          <path d="M29 70C17 72 12 63 15 53C17 47 23 46 26 50" fill="none" stroke="#d87937" stroke-width="8" stroke-linecap="round"/>
+          <path d="M17 56C17 52 20 50 23 51" fill="none" stroke="#f4b16f" stroke-width="2.5" stroke-linecap="round"/>
+        </g>
+        <ellipse cx="52" cy="72" rx="24" ry="20" fill="#e58a43"/>
+        <ellipse cx="52" cy="76" rx="14" ry="12" fill="#f7d8b8"/>
+        <ellipse cx="36" cy="86" rx="9" ry="5" fill="#d87937"/>
+        <ellipse cx="67" cy="86" rx="9" ry="5" fill="#d87937"/>
+        <path d="M27 48L29 24L45 37C50 35 55 35 60 37L76 24L77 49C81 54 83 60 81 67C78 79 67 85 52 85C37 85 26 78 23 67C21 60 23 53 27 48Z" fill="#f2a45c"/>
+        <path d="M33 31L34 44L43 38Z" fill="#e87972"/>
+        <path d="M70 31L69 44L61 38Z" fill="#e87972"/>
+        <path d="M37 50C40 47 44 47 47 50" fill="none" stroke="#49352d" stroke-width="2.8" stroke-linecap="round"/>
+        <path d="M57 50C60 47 64 47 67 50" fill="none" stroke="#49352d" stroke-width="2.8" stroke-linecap="round"/>
+        <g class="cat-eyes" fill="#49352d">
+          <ellipse cx="42" cy="55" rx="2.2" ry="3.1"/>
+          <ellipse cx="62" cy="55" rx="2.2" ry="3.1"/>
+        </g>
+        <path d="M49 61Q52 58 55 61Q52 65 49 61Z" fill="#c96d69"/>
+        <path d="M52 64V67M52 67Q48 71 45 67M52 67Q56 71 59 67" fill="none" stroke="#49352d" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M39 62L29 60M39 66L29 67M65 62L75 60M65 66L75 67" fill="none" stroke="#8a5a3d" stroke-width="1.2" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <div class="custom-cursor" aria-hidden="true">
+      <span class="custom-cursor-dot"></span>
+      <span class="custom-cursor-ring"><span class="custom-cursor-label"></span></span>
+    </div>
   </body>
 </html>
