@@ -5107,6 +5107,12 @@ body.is-lightbox-open {
     box-shadow: 0 16px 38px rgba(0, 0, 0, 0.24);
   }
 
+  .interest-preview.is-visible {
+    pointer-events: auto;
+    cursor: pointer;
+    touch-action: manipulation;
+  }
+
   .avatar-frame:active,
   .skill-card[data-skill-level]:active,
   .interest-card:active {

@@ -352,6 +352,16 @@ if (interestPreview instanceof HTMLElement
     });
   });
 
+  interestPreview.addEventListener("click", (event) => {
+    if (!mobileTapViewport.matches) {
+      return;
+    }
+
+    event.stopPropagation();
+    interestPreview.classList.remove("is-visible");
+    interestPreviewVideo.pause();
+  });
+
   window.addEventListener("scroll", () => {
     if (activeInterestCard) {
       positionInterestPreview(activeInterestCard);
